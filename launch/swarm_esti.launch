@@ -1,0 +1,76 @@
+
+
+<launch>
+
+	<!-- <node pkg="tf" type="static_transform_publisher" name="map_world_broadcaster" args="0 0 0 0 0 0 /world /map 1000" /> -->
+
+	 <include file="$(find state_estimation)/launch/one_agent_esti.launch">
+		<arg name="agent_id"  value="0"/>
+		<arg name="x" value="1"/>
+		<arg name="y" value="0"/>
+		<arg name="z" value="0"/>
+		<arg name="other_id1" value="1"/>
+		<arg name="other_id2" value="2"/>
+		<arg name="other_id3" value="3"/>
+    </include> 
+
+	 <include file="$(find state_estimation)/launch/one_agent_esti.launch">
+		<arg name="agent_id"  value="1"/>
+		<arg name="x" value="0"/>
+		<arg name="y" value="1"/>
+		<arg name="z" value="0"/>
+		<arg name="other_id1" value="0"/>
+		<arg name="other_id2" value="2"/>
+		<arg name="other_id3" value="3"/>
+    </include>
+
+	 <include file="$(find state_estimation)/launch/one_agent_esti.launch">
+		<arg name="agent_id"  value="2"/>
+		<arg name="x" value="-1"/>
+		<arg name="y" value="0"/>
+		<arg name="z" value="0"/>
+		<arg name="other_id1" value="0"/>
+		<arg name="other_id2" value="1"/>
+		<arg name="other_id3" value="3"/>
+    </include>
+
+	 <include file="$(find state_estimation)/launch/one_agent_esti.launch">
+		<arg name="agent_id"  value="3"/>
+		<arg name="x" value="0"/>
+		<arg name="y" value="-1"/>
+		<arg name="z" value="0"/>
+		<arg name="other_id1" value="0"/>
+		<arg name="other_id2" value="1"/>
+		<arg name="other_id3" value="2"/>
+    </include>
+
+	<node pkg="state_estimation" name="state_mean" type="state_mean" output="screen"/>
+
+
+	<!-- <include file="$(find formation_avoidance)/launch/formation_one_agent.launch">
+		<arg name="agent_id"  value="4"/>
+		<arg name="x" value="0"/>
+		<arg name="y" value="0.0"/>
+		<arg name="z" value="0"/>
+		<arg name="other_id1" value="0"/>
+		<arg name="other_id2" value="1"/>
+		<arg name="other_id3" value="2"/>
+    </include> 
+
+
+
+	<include file="$(find formation_avoidance)/launch/formation_one_agent.launch">
+		<arg name="agent_id"  value="5"/>
+		<arg name="x" value="0"/>
+		<arg name="y" value="0.0"/>
+		<arg name="z" value="0"/>
+		<arg name="other_id1" value="0"/>
+		<arg name="other_id2" value="1"/>
+		<arg name="other_id3" value="2"/>
+    </include>  -->
+
+
+
+
+
+</launch>

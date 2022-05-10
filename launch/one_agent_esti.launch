@@ -1,0 +1,30 @@
+<launch>
+
+
+	<arg name="agent_id"  default="0"/>
+	<arg name="x" default="0"/>
+	<arg name="y" default="0"/>
+	<arg name="z" default="0"/>
+	<arg name="other_id1" default="1"/>
+	<arg name="other_id2" default="2"/>
+	<arg name="other_id3" default="3"/>
+
+	<arg name="p" default="-1"/>
+	<arg name="q" default="0"/>
+	<arg name="r" default="9"/>
+
+	<node pkg="state_estimation" name="state_esti_$(arg agent_id)" type="state_esti" output="screen">
+		<param name="agent" value="$(arg agent_id)" type="int"/>
+		<param name="other1" value="$(arg other_id1)" type="int"/>
+		<param name="other2" value="$(arg other_id2)" type="int"/>
+		<param name="other3" value="$(arg other_id3)" type="int"/>
+		<param name="p" value="$(arg p)" type="int"/>
+		<param name="q" value="$(arg q)" type="int"/>
+		<param name="r" value="$(arg r)" type="int"/>
+		<!-- <remap from="/gtec/gazebo/uwb/ranging" to="/gtec/gazebo/uwb/ranging/$(arg agent_id)"/> -->
+	</node>
+
+	
+
+
+</launch>
